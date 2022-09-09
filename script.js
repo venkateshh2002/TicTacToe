@@ -14,7 +14,8 @@ for (let i = 0; i < 9; i++) {
       turn = turn === "X" ? "O" : "X";
       if (checkDraw()) {
         document.getElementById("won").innerHTML = "DRAW";
-        document.getElementById("won").style.fontSize = "20px";
+        document.getElementById("won").style.fontSize = "40px";
+        document.getElementById("won").style.fontWeight = "600";
       }
       if (checkWin()) turn = "";
     }
@@ -45,12 +46,16 @@ checkWin = () => {
     let c = arr[pos[i][2]].innerHTML;
     if (a === "X" && b === "X" && c === "X") {
       document.getElementById("won").innerHTML = "X WON";
-      document.getElementById("won").style.fontSize = "20px";
+      document.getElementById("won").style.fontSize = "40px";
+      document.getElementById("won").style.fontWeight = "600";
+
       return true;
     }
     if (a === "O" && b === "O" && c === "O") {
       document.getElementById("won").innerHTML = "O WON";
-      document.getElementById("won").style.fontSize = "20px";
+      document.getElementById("won").style.fontSize = "40px";
+      document.getElementById("won").style.fontWeight = "600";
+
       return true;
     }
   }
