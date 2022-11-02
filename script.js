@@ -7,6 +7,7 @@ reset = () => {
     turn = "X"; //other wise it starts with O
   }
   document.getElementById("won").innerHTML = "";
+  flag = 1;
 };
 
 //check for win
