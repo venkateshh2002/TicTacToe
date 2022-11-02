@@ -1,5 +1,5 @@
 let arr = document.getElementsByClassName("box");
-
+let flag = 1;
 //reset board
 reset = () => {
   for (let i = 0; i < 9; i++) {
@@ -82,10 +82,11 @@ let check = (cha) => {
 let hum = () => {
   for (let j = 0; j < 9; j++) {
     arr[j].addEventListener("click", () => {
-      if (arr[j].innerHTML === "" && !checkWin()) {
+      if (arr[j].innerHTML === "" && !checkWin() && flag === 1) {
         arr[j].innerHTML = "X";
+        flag = 0;
         checkDraw();
-        com();
+        setTimeout(com, 400);
       }
     });
   }
@@ -95,6 +96,7 @@ let hum = () => {
 let com = () => {
   if (arr[4].innerHTML === "") {
     arr[4].innerHTML = "O";
+    flag = 1;
     hum();
     return;
   }
@@ -103,6 +105,7 @@ let com = () => {
   if (checkO >= 1 && checkO <= 9) {
     if (arr[msind[checkO]].innerHTML === "") {
       arr[msind[checkO]].innerHTML = "O";
+      flag = 1;
       checkWin();
       checkDraw();
       hum();
@@ -115,6 +118,7 @@ let com = () => {
     console.log(checkX);
     if (arr[msind[checkX]].innerHTML === "") {
       arr[msind[checkX]].innerHTML = "O";
+      flag = 1;
       checkWin();
       checkDraw();
       hum();
@@ -125,6 +129,7 @@ let com = () => {
   for (let i = 0; i < 9; i++) {
     if (arr[i].innerHTML === "") {
       arr[i].innerHTML = "O";
+      flag = 1;
       checkWin();
       checkDraw();
       hum();
