@@ -25,18 +25,10 @@ checkWin = () => {
     let a = arr[pos[i][0]].innerHTML;
     let b = arr[pos[i][1]].innerHTML;
     let c = arr[pos[i][2]].innerHTML;
-    if (a === "X" && b === "X" && c === "X") {
-      document.getElementById("won").innerHTML = "X WON";
-      document.getElementById("won").style.fontSize = "40px";
-      document.getElementById("won").style.fontWeight = "400";
-
-      return true;
-    }
     if (a === "O" && b === "O" && c === "O") {
-      document.getElementById("won").innerHTML = "Venkateshh Won ⚔️";
+      document.getElementById("won").innerHTML = "X Won ⚔️";
       document.getElementById("won").style.fontSize = "40px";
       document.getElementById("won").style.fontWeight = "400";
-
       return true;
     }
   }
@@ -93,7 +85,7 @@ let hum = () => {
       if (arr[j].innerHTML === "" && !checkWin()) {
         arr[j].innerHTML = "X";
         checkDraw();
-        setTimeout(com, 350);
+        com();
       }
     });
   }
