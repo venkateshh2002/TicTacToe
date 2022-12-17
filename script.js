@@ -35,7 +35,6 @@ checkWin = () => {
   }
   return false;
 };
-
 //check for draw
 checkDraw = () => {
   for (let i = 0; i < 9; i++) {
@@ -47,7 +46,6 @@ checkDraw = () => {
   document.getElementById("won").style.fontWeight = "400";
   return true;
 };
-
 //check wether human or computer can win in next move
 let check = (cha) => {
   let pos = [
@@ -78,7 +76,6 @@ let check = (cha) => {
   }
   return -1;
 };
-
 //human plays
 let hum = () => {
   for (let j = 0; j < 9; j++) {
@@ -92,7 +89,6 @@ let hum = () => {
     });
   }
 };
-
 //computer plays
 let com = () => {
   if (arr[4].innerHTML === "") {
@@ -127,6 +123,26 @@ let com = () => {
     }
   }
   //Random move if no logic
+  for (let i = 0; i < 9; i += 6) {
+    if (arr[i].innerHTML === "") {
+      arr[i].innerHTML = "O";
+      flag = 1;
+      checkWin();
+      checkDraw();
+      hum();
+      return;
+    }
+  }
+  for (let i = 2; i < 9; i += 6) {
+    if (arr[i].innerHTML === "") {
+      arr[i].innerHTML = "O";
+      flag = 1;
+      checkWin();
+      checkDraw();
+      hum();
+      return;
+    }
+  }
   for (let i = 0; i < 9; i++) {
     if (arr[i].innerHTML === "") {
       arr[i].innerHTML = "O";
@@ -138,7 +154,6 @@ let com = () => {
     }
   }
 };
-
 //Initilly human starts the game
 hum();
 //magic square
