@@ -27,7 +27,7 @@ checkWin = () => {
     let b = arr[pos[i][1]].innerHTML;
     let c = arr[pos[i][2]].innerHTML;
     if (a === "O" && b === "O" && c === "O") {
-      document.getElementById("won").innerHTML = "Venky Won ⚔️";
+      document.getElementById("won").innerHTML = "You lost";
       document.getElementById("won").style.fontSize = "25px";
       document.getElementById("won").style.fontWeight = "400";
       return true;
@@ -41,7 +41,7 @@ checkDraw = () => {
     if (arr[i].innerHTML === "") return false;
   }
   if (checkWin()) return false;
-  document.getElementById("won").innerHTML = "Draw (AATAGAADIVEY)";
+  document.getElementById("won").innerHTML = "Draw";
   document.getElementById("won").style.fontSize = "25px";
   document.getElementById("won").style.fontWeight = "400";
   return true;
